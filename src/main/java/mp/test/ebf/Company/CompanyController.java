@@ -1,5 +1,7 @@
 package mp.test.ebf.Company;
 
+import mp.test.ebf.Employee.Employee;
+import mp.test.ebf.Employee.EmployeeRepository;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +14,11 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 class CompanyController {
 
     private final CompanyRepository repository;
+    private final EmployeeRepository employees;
 
-    CompanyController(CompanyRepository repository) {
+    CompanyController(CompanyRepository repository, EmployeeRepository employees) {
         this.repository = repository;
+        this.employees = employees;
     }
 
 
@@ -67,4 +71,15 @@ class CompanyController {
     void deleteEmployee(@PathVariable String id) {
         repository.deleteById(id);
     }
+
+    @GetMapping("/companies/{id}/avgsalary")
+    Double getAverageSalary(@PathVariable String id) {
+        return employees.findAll()
+                .stream()
+                .filter(e -> e.getCompany().equals(id))
+                .mapToDouble(Employee::getSalary)
+                .average()
+                .orElseThrow(IllegalArgumentException::new);
+    }
+
 }
