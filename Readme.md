@@ -58,11 +58,14 @@ Which build tool is used?
 The test application is build using Apache Maven. Maven is provided by maven wrapper. The wrapper was installed via this command
 > mvnw -N io.takari:maven:wrapper -Dmaven='3.8.4'
 The maven wrapper is using maven version 3.8.4.
+
 How do I compile the application?
+
 The application is making use of Spring Boot Maven Plugin. A test container running the application can be started using 
 > ./mvnw package
 
 How do I test the application?
+
 The application is tested interactively with the postman api platform (https://www.postman.com). There is a collection of test requests provided in the file ebf test.postman_collection.json. The requests may not be run in arbitrary order. A sample testrun looks like this:
 1. Post Jedi Empire
 2. Get Companies
@@ -75,11 +78,14 @@ The application is tested interactively with the postman api platform (https://w
 9. Get 2nd company average salary (-> should be 500.000)
 
 How do I run the application?
+
 The application is making use of Spring Boot Maven Plugin. A test container running the application can be started using 
 > ./mvnw spring-boot:run
+
 Which Version Control System is used?
 The test application is using version control via git. Git is provided by intellij.
 
 Is there a public git repository for the souce-code?
+
 Yes, the sourcode is publically accessible via this url: https://github.com/mpfeifer/Spring101
 
