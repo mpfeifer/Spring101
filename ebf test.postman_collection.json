@@ -28,7 +28,7 @@
 							"        pm.environment.set(\"companyId2\", jsonData[1].id);\r",
 							"        console.log(\"company id found companyId=\" + jsonData[1].id);\r",
 							"    }\r",
-							"    pm.expect(jsonData.length > ).to.be.true;\r",
+							"    pm.expect(jsonData.length > 1).to.be.true;\r",
 							"});"
 						],
 						"type": "text/javascript"
