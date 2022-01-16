@@ -79,7 +79,7 @@ class CompanyController {
                 .filter(e -> e.getCompany().equals(id))
                 .mapToDouble(Employee::getSalary)
                 .average()
-                .orElseThrow(IllegalArgumentException::new);
+                .orElse(0.0d);
     }
 
 }
