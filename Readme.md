@@ -2,7 +2,7 @@ An example REST api in Java
 ===========================
 SOLVING THE TEST TASK WITH SPRING
 ---------------------------------
-Matthias Pfeifer | My application at EBF | 16.01.2022 
+Matthias Pfeifer | 16.01.2022 
 -----------------------------------------------------
 
 # Requirement Specification
